@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Target, Eye, Heart, CheckCircle } from "lucide-react";
+import alunosFC from "../assets/fc/logo-fc-filhos.png";
 
 const values = [
   "Excelência na formação e prestação de serviços",
@@ -58,10 +59,15 @@ export function About() {
               background: "#e8f0fe",
             }}>
               <img
-                src="https://images.unsplash.com/photo-1758691736433-4078b93abd72?w=800&h=600&fit=crop&auto=format"
-                alt="Equipa FC & Filhos em reunião profissional"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
+                src={alunosFC}
+                alt="Alunos formados pela FC & Filhos"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center"
+              }}
+            />
             </div>
             {/* Floating card */}
             <div style={{
@@ -71,7 +77,7 @@ export function About() {
               boxShadow: "0 10px 30px rgba(11,31,59,0.3)",
               minWidth: 160,
             }} className="about-float-card">
-              <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 36, color: "#4DA6FF", lineHeight: 1 }}>5+</div>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 36, color: "#4DA6FF", lineHeight: 1 }}>8+</div>
               <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.7)", marginTop: 4 }}>Anos de Actividade</div>
             </div>
             {/* Green accent */}
@@ -97,7 +103,7 @@ export function About() {
               fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, color: "#4a6080",
               lineHeight: 1.8, marginBottom: "2rem",
             }}>
-              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 5 anos de actividade, dedicada à formação profissional e à prestação de serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma referência nacional em capacitação profissional.
+              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, dedicada à formação profissional e à prestação de serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma referência em capacitação profissional.
             </p>
 
             {/* Mission / Vision / Values cards */}

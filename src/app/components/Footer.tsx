@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import logo from "../assets/fc/logo-fc-filhos.png";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -16,25 +17,28 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.25rem" }}>
-              <div style={{
-                width: 40, height: 40, borderRadius: 8,
-                background: "linear-gradient(135deg, #4DA6FF, #4CAF50)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 18, color: "#fff",
-              }}>FC</div>
+              <img
+                src={logo}
+                alt="FC & Filhos"
+                style={{
+                height: "55px",
+                width: "auto",
+                objectFit: "contain"
+              }}
+            />
               <div>
                 <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 17, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em" }}>COMÉRCIO & SERVIÇOS</div>
               </div>
             </div>
             <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: 280, marginBottom: "1.5rem" }}>
-              Transformando conhecimento em oportunidades. Mais de 5 anos formando profissionais e prestando serviços de excelência em Angola.
+              Transformando conhecimento em oportunidades. Mais de 8 anos formando profissionais e prestando serviços de excelência em Angola.
             </p>
             {/* Social */}
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {[
-                { icon: <Facebook size={17} />, href: "#", label: "Facebook" },
-                { icon: <Instagram size={17} />, href: "#", label: "Instagram" },
+                { icon: <Facebook size={17} />, href: "https://www.facebook.com/share/18dCYdriXN/", label: "Facebook" },
+                { icon: <Instagram size={17} />, href: "https://www.instagram.com/felizardo_casimiro?igsh=MWdkN3QxOXAxcnFxcQ==", label: "Instagram" },
                 { icon: <Youtube size={17} />, href: "#", label: "YouTube" },
               ].map((s) => (
                 <a
@@ -115,7 +119,7 @@ export function Footer() {
                 { icon: <MapPin size={14} />, text: "Lubango, Huíla (Sede)" },
                 { icon: <Phone size={14} />, text: "936 301 597" },
                 { icon: <Phone size={14} />, text: "928 506 070" },
-                { icon: <Mail size={14} />, text: "geral@fcfilhos.ao" },
+                { icon: <Mail size={14} />, text: "felizardocasimiri97@gmail.com" },
               ].map((item) => (
                 <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                   <div style={{ color: "#4DA6FF", flexShrink: 0 }}>{item.icon}</div>

@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
 
 const offices = [
-  { city: "Lubango", province: "Huíla", tag: "SEDE", color: "#4DA6FF", phones: ["936 301 597", "928 506 070"] },
+  { city: "Lubango", province: "Huíla", tag: "SEDE", color: "#4DA6FF", phones: ["936 301 597"] },
   { city: "Luanda", province: "Luanda", tag: "", color: "#4CAF50", phones: ["936 301 597"] },
-  { city: "Namibe", province: "Namibe", tag: "", color: "#9c27b0", phones: ["928 506 070"] },
+  { city: "Namibe", province: "Namibe", tag: "", color: "#9c27b0", phones: ["936 301 597"] },
   { city: "Cabinda", province: "Cabinda", tag: "", color: "#ff6f00", phones: ["936 301 597"] },
 ];
 
@@ -135,8 +135,8 @@ export function Contact() {
             </p>
 
             {[
-              { icon: <Phone size={18} />, label: "Telefones", values: ["936 301 597", "928 506 070"] },
-              { icon: <Mail size={18} />, label: "Email", values: ["geral@fcfilhos.ao"] },
+              { icon: <Phone size={18} />, label: "Telefones", values: ["936 301 597"] },
+              { icon: <Mail size={18} />, label: "Email", values: ["felizardocasimiri97@gmail.com"] },
               { icon: <Clock size={18} />, label: "Horário", values: ["Segunda – Sexta: 8h – 18h", "Sábado: 8h – 13h"] },
             ].map((info) => (
               <div key={info.label} style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>

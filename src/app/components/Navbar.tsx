@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "../assets/fc/logo-fc-filhos.png";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -37,12 +38,15 @@ export function Navbar() {
       <nav style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
         {/* Logo */}
         <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
-          <div style={{
-            width: 40, height: 40, borderRadius: 8,
-            background: "linear-gradient(135deg, #4DA6FF, #4CAF50)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 18, color: "#fff"
-          }}>FC</div>
+          <img
+              src={logo}
+              alt="FC & Filhos"
+              style={{
+              height: "55px",
+              width: "auto",
+              objectFit: "contain"
+          }}
+/>
           <div>
             <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 17, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
             <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em", lineHeight: 1 }}>COMÉRCIO & SERVIÇOS</div>

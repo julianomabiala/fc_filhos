@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import heroImage from "../assets/fc/aa.jpg";
 import { ArrowRight, ChevronDown, GraduationCap, Users, MapPin } from "lucide-react";
 
 export function Hero() {
@@ -53,16 +54,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              background: "rgba(77,166,255,0.15)", border: "1px solid rgba(77,166,255,0.3)",
-              borderRadius: 100, padding: "0.35rem 1rem", marginBottom: "1.5rem",
-            }}>
-              <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", flexShrink: 0 }} />
-              <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "#4DA6FF", fontWeight: 600, letterSpacing: "0.05em" }}>
-                Empresa Angolana de Referência
-              </span>
-            </div>
 
             <h1 style={{
               fontFamily: "'Outfit', sans-serif",
@@ -130,8 +121,7 @@ export function Hero() {
             {/* Stats */}
             <div style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
               {[
-                { icon: <GraduationCap size={18} />, value: "+5 Anos", label: "de Experiência" },
-                { icon: <Users size={18} />, value: "+40", label: "Colaboradores" },
+                { icon: <GraduationCap size={18} />, value: "+8 Anos", label: "de Experiência" },
                 { icon: <MapPin size={18} />, value: "4 Províncias", label: "de Presença" },
               ].map((stat) => (
                 <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
@@ -162,9 +152,14 @@ export function Hero() {
               background: "#1a3557",
             }}>
               <img
-                src="https://images.unsplash.com/photo-1655337690778-694dda7f4454?w=800&h=600&fit=crop&auto=format"
-                alt="Formação profissional — pessoas aprendendo em sala de aula"
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                src={heroImage}
+                alt="Alunos formados pela FC & Filhos"
+                style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block"
+              }}
               />
             </div>
             {/* Badge */}
@@ -177,7 +172,7 @@ export function Hero() {
             }} className="hero-badge">
               <GraduationCap size={22} color="#fff" />
               <div>
-                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#fff", lineHeight: 1 }}>+500</div>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#fff", lineHeight: 1 }}>+300</div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.85)", lineHeight: 1.3 }}>Formandos</div>
               </div>
             </div>

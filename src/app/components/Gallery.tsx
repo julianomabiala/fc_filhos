@@ -1,111 +1,273 @@
+import { useState } from "react";
 import { motion } from "motion/react";
-import { ImageIcon } from "lucide-react";
+import { ImageIcon, PlayCircle } from "lucide-react";
+
+// IMAGENS
+import alunosCertificados from "../assets/fc/cer1.jpg";
+import cursoCocktails from "../assets/fc/kok44.jpg";
+
+// VÍDEOS
+import workshopVideo from "../assets/fc/work1.mp4";
+import formacaoVideo from "../assets/fc/vid1.mp4";
 
 const galleryItems = [
-  { src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop&auto=format", alt: "Sessão de formação profissional", label: "Formações" },
-  { src: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&h=400&fit=crop&auto=format", alt: "Serviços de salão de beleza", label: "Salão de Beleza" },
-  { src: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop&auto=format", alt: "Aula de cocktails e mixologia", label: "Mixologia" },
-  { src: "https://images.unsplash.com/photo-1694521787673-28cbd8830ea5?w=600&h=400&fit=crop&auto=format", alt: "Obra de construção civil", label: "Construção Civil" },
-  { src: "https://images.unsplash.com/photo-1638957835514-224c57ffe617?w=600&h=400&fit=crop&auto=format", alt: "Workshop de grupo", label: "Workshops" },
-  { src: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=400&fit=crop&auto=format", alt: "Serviços de beleza profissionais", label: "Serviços" },
+  {
+    type: "image",
+    src: alunosCertificados,
+    label: "Entrega de Certificados",
+    category: "Certificados",
+    fit: "contain",
+  },
+  {
+    type: "image",
+    src: cursoCocktails,
+    label: "Curso de Cocktails",
+    category: "Mixologia",
+    fit: "cover",
+  },
+  {
+    type: "video",
+    src: workshopVideo,
+    label: "Workshop de Mixologia",
+    category: "Mixologia",
+  },
+  {
+    type: "video",
+    src: formacaoVideo,
+    label: "Formação Profissional",
+    category: "Formações",
+  },
 ];
 
 export function Gallery() {
-  return (
-    <section id="galeria" style={{ padding: "6rem 1.5rem", background: "#f8fafc" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+  const [activeFilter, setActiveFilter] = useState("Todos");
 
+  const filters = [
+    "Todos",
+    "Formações",
+    "Mixologia",
+    "Certificados",
+    "Vídeos",
+  ];
+
+  const filteredItems = galleryItems.filter((item) => {
+    if (activeFilter === "Todos") return true;
+
+    if (activeFilter === "Vídeos") {
+      return item.type === "video";
+    }
+
+    return item.category === activeFilter;
+  });
+
+  return (
+    <section
+      id="galeria"
+      style={{
+        padding: "6rem 1.5rem",
+        background: "#f8fafc",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+        }}
+      >
+        {/* Cabeçalho */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: "3.5rem" }}
+          style={{
+            textAlign: "center",
+            marginBottom: "3rem",
+          }}
         >
-          <span style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, fontWeight: 700,
-            color: "#4DA6FF", letterSpacing: "0.1em", textTransform: "uppercase",
-            display: "block", marginBottom: "0.75rem",
-          }}>O Nosso Trabalho</span>
-          <h2 style={{
-            fontFamily: "'Outfit', sans-serif", fontWeight: 800,
-            fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#0B1F3B",
-            letterSpacing: "-0.02em", lineHeight: 1.2,
-          }}>Galeria</h2>
-          <p style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "#4a6080",
-            maxWidth: 540, margin: "1rem auto 0", lineHeight: 1.7,
-          }}>
-            Momentos que capturam o nosso compromisso com a excelência — formações, eventos e serviços realizados.
+          <span
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: "13px",
+              fontWeight: 700,
+              color: "#4DA6FF",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              display: "block",
+              marginBottom: "0.75rem",
+            }}
+          >
+            O Nosso Trabalho
+          </span>
+
+          <h2
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 800,
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              color: "#0B1F3B",
+              marginBottom: "1rem",
+            }}
+          >
+            Galeria FC & Filhos
+          </h2>
+
+          <p
+            style={{
+              maxWidth: "700px",
+              margin: "0 auto",
+              fontSize: "17px",
+              lineHeight: 1.8,
+              color: "#4a6080",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
+          >
+            Conheça alguns momentos das nossas formações,
+            workshops, actividades práticas e serviços realizados
+            em várias províncias de Angola.
           </p>
         </motion.div>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gridTemplateRows: "repeat(2, 240px)",
-          gap: "1rem",
-        }} className="gallery-grid">
-          {galleryItems.map((item, i) => (
-            <motion.div
-              key={item.alt}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
+        {/* FILTROS */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "0.75rem",
+            marginBottom: "3rem",
+          }}
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
               style={{
-                position: "relative", borderRadius: 16, overflow: "hidden",
-                background: "#dde5f0",
-                gridColumn: i === 0 ? "span 2" : "span 1",
+                padding: "0.8rem 1.5rem",
+                borderRadius: "999px",
+                border: "none",
                 cursor: "pointer",
+                fontSize: "14px",
+                fontWeight: 600,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                transition: "all .3s ease",
+
+                background:
+                  activeFilter === filter
+                    ? "#4DA6FF"
+                    : "#ffffff",
+
+                color:
+                  activeFilter === filter
+                    ? "#ffffff"
+                    : "#0B1F3B",
+
+                boxShadow:
+                  activeFilter === filter
+                    ? "0 8px 20px rgba(77,166,255,.35)"
+                    : "0 2px 10px rgba(0,0,0,.08)",
               }}
             >
-              <img
-                src={item.src}
-                alt={item.alt}
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.4s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-              />
-              <div style={{
-                position: "absolute", inset: 0,
-                background: "linear-gradient(to top, rgba(11,31,59,0.65) 0%, transparent 50%)",
-                transition: "opacity 0.3s",
-              }} />
-              <div style={{
-                position: "absolute", bottom: 0, left: 0, right: 0,
-                padding: "1rem 1.25rem",
-                display: "flex", alignItems: "center", gap: "0.5rem",
-              }}>
-                <ImageIcon size={14} color="rgba(255,255,255,0.7)" />
-                <span style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, fontWeight: 600,
-                  color: "#fff",
-                }}>{item.label}</span>
+              {filter}
+            </button>
+          ))}
+        </div>
+
+        {/* GRID */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gap: "1.5rem",
+          }}
+        >
+          {filteredItems.map((item, index) => (
+            <motion.div
+              key={`${item.label}-${index}`}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
+              whileHover={{
+                y: -6,
+              }}
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                overflow: "hidden",
+                boxShadow: "0 12px 30px rgba(11,31,59,0.08)",
+                border: "1px solid rgba(11,31,59,0.05)",
+              }}
+            >
+              {/* MEDIA */}
+              <div
+                style={{
+                  height: "280px",
+                  background: "#eef3fa",
+                  overflow: "hidden",
+                }}
+              >
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: item.fit || "cover",
+                      objectPosition: "center",
+                      display: "block",
+                    }}
+                  />
+                ) : (
+                  <video
+                    controls
+                    preload="metadata"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      background: "#000",
+                    }}
+                  >
+                    <source src={item.src} type="video/mp4" />
+                  </video>
+                )}
+              </div>
+
+              {/* LEGENDA */}
+              <div
+                style={{
+                  padding: "1rem 1.25rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.65rem",
+                }}
+              >
+                {item.type === "image" ? (
+                  <ImageIcon size={18} color="#4DA6FF" />
+                ) : (
+                  <PlayCircle size={18} color="#4CAF50" />
+                )}
+
+                <span
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    color: "#0B1F3B",
+                  }}
+                >
+                  {item.label}
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Placeholder note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          style={{
-            textAlign: "center", marginTop: "2rem",
-            padding: "1rem",
-            background: "rgba(77,166,255,0.08)",
-            border: "1px dashed rgba(77,166,255,0.35)",
-            borderRadius: 12,
-          }}
-        >
-          <p style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "#4a6080",
-          }}>
-            📸 Esta secção será actualizada com fotos reais das nossas formações, workshops e eventos.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

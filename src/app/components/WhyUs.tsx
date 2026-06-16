@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Award, Users, MapPin, Shield, HeartHandshake, TrendingUp } from "lucide-react";
 
 const reasons = [
-  { icon: <Award size={28} />, title: "+5 Anos de Experiência", desc: "Meio decénio de excelência na formação profissional e prestação de serviços em Angola.", color: "#4DA6FF" },
+  { icon: <Award size={28} />, title: "+8 Anos de Experiência", desc: "Meio decénio de excelência na formação profissional e prestação de serviços em Angola.", color: "#4DA6FF" },
   { icon: <Users size={28} />, title: "+40 Colaboradores", desc: "Uma equipa dedicada de profissionais qualificados prontos para servir com excelência.", color: "#4CAF50" },
   { icon: <MapPin size={28} />, title: "Presença Nacional", desc: "Lubango, Luanda, Namibe e Cabinda. A crescer para servir todo o território angolano.", color: "#9c27b0" },
   { icon: <Shield size={28} />, title: "Formação Certificada", desc: "Todos os nossos cursos possuem certificação profissional reconhecida pelas entidades competentes.", color: "#ff6f00" },
@@ -61,7 +61,7 @@ export function WhyUs() {
             { value: "+500", label: "Formandos" },
             { value: "+40", label: "Colaboradores" },
             { value: "4", label: "Províncias" },
-            { value: "5+", label: "Anos" },
+            { value: "8+", label: "Anos" },
             { value: "8+", label: "Cursos" },
           ].map((stat) => (
             <div key={stat.label}>

@@ -103,7 +103,7 @@ export function About() {
               fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, color: "#4a6080",
               lineHeight: 1.8, marginBottom: "2rem",
             }}>
-              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, Comércio e Prestação de Serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma empresa edicada à forenecer resultados profissional.
+              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, Comércio e Prestação de Serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma empresa edicada à fornecer resultados profissional.
             </p>
 
             {/* Mission / Vision / Values cards */}

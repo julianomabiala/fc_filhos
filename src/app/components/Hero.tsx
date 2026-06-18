@@ -1,7 +1,13 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import heroImage from "../assets/fc/aa.jpg";
-import { ArrowRight, ChevronDown, GraduationCap, Users, MapPin } from "lucide-react";
-
+import {
+  ArrowRight,
+  ChevronDown,
+  Briefcase,
+  Users,
+  MapPin,
+  GraduationCap,
+} from "lucide-react";
 export function Hero() {
   return (
     <section
@@ -55,29 +61,38 @@ export function Hero() {
             transition={{ duration: 0.7 }}
           >
 
-            <h1 style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-              color: "#ffffff",
-              lineHeight: 1.15,
-              marginBottom: "1.25rem",
-              letterSpacing: "-0.02em",
-            }}>
-              Transformando{" "}
-              <span style={{ color: "#4DA6FF" }}>Conhecimento</span>
-              {" "}em Oportunidades
-            </h1>
-
-            <p style={{
+            <h1
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
+                color: "#ffffff",
+                lineHeight: 1.15,
+                marginBottom: "1.25rem",
+                letterSpacing: "-0.02em",
+              }}
+            >
+            Comércio e{" "}
+              <span style={{ color: "#4DA6FF" }}>
+                Prestação de Serviços
+              </span>
+              {" "}com Excelência
+          </h1>
+            <p
+              style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
               color: "rgba(255,255,255,0.72)",
               lineHeight: 1.7,
               marginBottom: "2.25rem",
-              maxWidth: 520,
-            }}>
-              Mais de 8 anos formando profissionais e prestando serviços de excelência em Angola. Da formação profissional à construção civil, somos o seu parceiro de crescimento.
+              maxWidth: 620,
+            }}
+            >
+              A FC & Filhos Comércio e Prestação de Serviços actua há mais de
+              8 anos em diversas áreas de actividade, incluindo Formação
+              Profissional, Gráfica, Salão de Beleza, Mixologia e outras
+              soluções empresariais que impulsionam o crescimento de pessoas,
+              empresas e comunidades em Angola.
             </p>
 
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
@@ -96,7 +111,7 @@ export function Hero() {
                 onMouseEnter={(e) => { e.currentTarget.style.background = "#2a7fd4"; e.currentTarget.style.transform = "translateY(-2px)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "#4DA6FF"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
-                Ver Cursos
+                Conhecer Serviços
                 <ArrowRight size={17} />
               </a>
               <a
@@ -119,20 +134,75 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div style={{ display: "flex", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "2rem",
+                marginTop: "2rem",
+                flexWrap: "wrap",
+                alignItems: "flex-start",
+              }}
+          >
               {[
-                { icon: <GraduationCap size={18} />, value: "+8 Anos", label: "de Experiência" },
-                { icon: <MapPin size={18} />, value: "4 Províncias", label: "de Presença" },
+                {
+                 icon: <Briefcase size={18} />,
+                  value: "+8",
+                  label: "Anos de Actividade",
+                },
+                {
+                  icon: <Users size={18} />,
+                  value: "40+",
+                  label: "Colaboradores",
+                },
+                {
+                  icon: <MapPin size={18} />,
+                  value: "4",
+                  label: "Províncias",
+                },
               ].map((stat) => (
-                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "#4DA6FF" }}>
-                    {stat.icon}
-                    <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 22, color: "#fff" }}>{stat.value}</span>
-                  </div>
-                  <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.55)" }}>{stat.label}</span>
-                </div>
-              ))}
+          <div
+              key={stat.label}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.2rem",
+                minWidth: 120,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  color: "#4DA6FF",
+                }}
+              >
+                {stat.icon}
+
+                <span
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 22,
+                    color: "#fff",
+                  }}
+                >
+                  {stat.value}
+                </span>
+              </div>
+
+              <span
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.55)",
+                }}
+              >
+                {stat.label}
+              </span>
             </div>
+          ))}
+        </div>
           </motion.div>
 
           {/* Right — image card */}

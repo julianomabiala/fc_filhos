@@ -4,11 +4,11 @@ import logo from "../assets/fc/logo-fc-filhos.png";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Áreas", href: "#areas" },
-  { label: "Cursos", href: "#cursos" },
+  { label: "Sobre Nós", href: "#sobre" },
+  { label: "Serviços", href: "#areas" },
+  { label: "Formação", href: "#cursos" },
   { label: "Galeria", href: "#galeria" },
-  { label: "Testemunhos", href: "#testemunhos" },
+  { label: "Clientes", href: "#testemunhos" },
   { label: "Contactos", href: "#contactos" },
 ];
 
@@ -48,8 +48,8 @@ export function Navbar() {
           }}
 />
           <div>
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 17, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em", lineHeight: 1 }}>COMÉRCIO & SERVIÇOS</div>
+            <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em", lineHeight: 1 }}>COMÉRCIO & PRESTAÇÃO <br/> DE SERVIÇOS</div>
           </div>
         </a>
 

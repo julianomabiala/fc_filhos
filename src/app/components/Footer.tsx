@@ -28,11 +28,11 @@ export function Footer() {
             />
               <div>
                 <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 17, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
-                <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em" }}>COMÉRCIO & SERVIÇOS</div>
+                <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em" }}>COMÉRCIO & PRESTAÇÃO <br /> DE SERVIÇOS</div>
               </div>
             </div>
             <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: 280, marginBottom: "1.5rem" }}>
-              Transformando conhecimento em oportunidades. Mais de 8 anos formando profissionais e prestando serviços de excelência em Angola.
+              Comércio e Prestação de Serviços com Excelência. Mais de 8 anos formando profissionais e prestando serviços de excelência em Angola.
             </p>
             {/* Social */}
             <div style={{ display: "flex", gap: "0.75rem" }}>

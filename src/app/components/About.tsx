@@ -103,14 +103,14 @@ export function About() {
               fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, color: "#4a6080",
               lineHeight: 1.8, marginBottom: "2rem",
             }}>
-              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, dedicada à formação profissional e à prestação de serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma referência em capacitação profissional.
+              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, Comércio e Prestação de Serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma empresa edicada à forenecer resultados profissional.
             </p>
 
             {/* Mission / Vision / Values cards */}
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2rem" }}>
               {[
                 { icon: <Target size={20} />, title: "Missão", desc: "Formar profissionais competentes e prestar serviços de excelência que contribuam para o desenvolvimento sustentável de Angola." },
-                { icon: <Eye size={20} />, title: "Visão", desc: "Ser a empresa de referência nacional em formação profissional e prestação de serviços multidisciplinares." },
+                { icon: <Eye size={20} />, title: "Visão", desc: "Ser a empresa de referência nacional em Comércio e prestação de serviços multissetorial." },
                 { icon: <Heart size={20} />, title: "Valores", desc: "Excelência, Integridade, Inovação, Comprometimento e Responsabilidade Social." },
               ].map((item) => (
                 <div key={item.title} style={{

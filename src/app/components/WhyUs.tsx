@@ -36,7 +36,7 @@ export function WhyUs() {
             fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "#4a6080",
             maxWidth: 560, margin: "1rem auto 0", lineHeight: 1.7,
           }}>
-            Somos mais do que uma empresa de formação. Somos parceiros no seu crescimento profissional.
+            Somos mais do que uma empresa Comércio e Prestação de Serviços. Somos parceiros no seu crescimento profissional.
           </p>
         </motion.div>
 

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import heroImage from "../assets/fc/aa.jpg";
 import {
   ArrowRight,
@@ -24,7 +24,7 @@ export function Hero() {
       {/* Background image with overlay */}
       <div style={{
         position: "absolute", inset: 0,
-        backgroundImage: `url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&h=900&fit=crop&auto=format)`,
+        backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         opacity: 0.18,
@@ -242,7 +242,7 @@ export function Hero() {
             }} className="hero-badge">
               <GraduationCap size={22} color="#fff" />
               <div>
-                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#fff", lineHeight: 1 }}>+300</div>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#fff", lineHeight: 1 }}>+500</div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.85)", lineHeight: 1.3 }}>Formandos</div>
               </div>
             </div>

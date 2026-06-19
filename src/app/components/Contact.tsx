@@ -2,11 +2,16 @@ import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
 
+const primaryPhone = "936 301 597";
+const secondaryPhone = "928 506 070";
+const whatsappNumber = "244936301597";
+const contactEmail = "felizardocasimiri97@gmail.com";
+
 const offices = [
-  { city: "Lubango", province: "Huíla", tag: "SEDE", color: "#4DA6FF", phones: ["936 301 597"] },
-  { city: "Luanda", province: "Luanda", tag: "", color: "#4CAF50", phones: ["936 301 597"] },
-  { city: "Namibe", province: "Namibe", tag: "", color: "#9c27b0", phones: ["936 301 597"] },
-  { city: "Cabinda", province: "Cabinda", tag: "", color: "#ff6f00", phones: ["936 301 597"] },
+  { city: "Lubango", province: "Huíla", tag: "SEDE", color: "#4DA6FF", phones: [primaryPhone, secondaryPhone] },
+  { city: "Luanda", province: "Luanda", tag: "", color: "#4CAF50", phones: [primaryPhone] },
+  { city: "Namibe", province: "Namibe", tag: "", color: "#9c27b0", phones: [primaryPhone] },
+  { city: "Cabinda", province: "Cabinda", tag: "", color: "#ff6f00", phones: [primaryPhone] },
 ];
 
 export function Contact() {
@@ -15,6 +20,16 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const message = [
+      "Olá, FC & Filhos.",
+      `Nome: ${form.name}`,
+      `Telefone: ${form.phone}`,
+      form.email ? `Email: ${form.email}` : "",
+      form.service ? `Serviço: ${form.service}` : "",
+      `Mensagem: ${form.message}`,
+    ].filter(Boolean).join("\n");
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -135,8 +150,8 @@ export function Contact() {
             </p>
 
             {[
-              { icon: <Phone size={18} />, label: "Telefones", values: ["936 301 597"] },
-              { icon: <Mail size={18} />, label: "Email", values: ["felizardocasimiri97@gmail.com"] },
+              { icon: <Phone size={18} />, label: "Telefones", values: [primaryPhone, secondaryPhone] },
+              { icon: <Mail size={18} />, label: "Email", values: [contactEmail] },
               { icon: <Clock size={18} />, label: "Horário", values: ["Segunda – Sexta: 8h – 18h", "Sábado: 8h – 13h"] },
             ].map((info) => (
               <div key={info.label} style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
@@ -159,7 +174,7 @@ export function Contact() {
 
             {/* WhatsApp button */}
             <a
-              href="https://wa.me/244936301597"
+              href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -202,10 +217,10 @@ export function Contact() {
                 background: "rgba(76,175,80,0.15)", border: "1.5px solid rgba(76,175,80,0.4)",
                 borderRadius: 12, padding: "2rem", textAlign: "center",
               }}>
-                <div style={{ fontSize: 40, marginBottom: "0.5rem" }}>✅</div>
-                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#4CAF50" }}>Mensagem Enviada!</div>
+                <div style={{ fontSize: 40, marginBottom: "0.5rem" }}>✓</div>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 18, color: "#4CAF50" }}>Mensagem preparada!</div>
                 <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.65)", marginTop: 8 }}>
-                  Entraremos em contacto brevemente.
+                  Continue o envio na conversa do WhatsApp.
                 </p>
               </div>
             ) : (

@@ -3,11 +3,11 @@ import { Target, Eye, Heart, CheckCircle } from "lucide-react";
 import alunosFC from "../assets/fc/logo-fc-filhos.png";
 
 const values = [
-  "Excelência na formação e prestação de serviços",
+  "Excelência no comércio e prestação de serviços",
   "Comprometimento com o desenvolvimento de Angola",
-  "Respeito e valorização dos nossos colaboradores",
+  "Respeito e valorização dos colaboradores e clientes",
   "Inovação e melhoria contínua",
-  "Integridade e ética profissional",
+  "Integridade, ética e responsabilidade profissional",
 ];
 
 export function About() {
@@ -37,7 +37,7 @@ export function About() {
             fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 17, color: "#4a6080",
             maxWidth: 600, margin: "0 auto", lineHeight: 1.7,
           }}>
-            Uma empresa angolana construída sobre pilares de confiança, dedicação e resultados concretos.
+            Uma empresa angolana dedicada ao comércio e à prestação de serviços, construída sobre pilares de confiança, qualidade e resultados concretos.
           </p>
         </motion.div>
 
@@ -103,15 +103,15 @@ export function About() {
               fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, color: "#4a6080",
               lineHeight: 1.8, marginBottom: "2rem",
             }}>
-              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade, Comércio e Prestação de Serviços de qualidade. Com cerca de 40 colaboradores e presença nas províncias de Lubango, Luanda, Namibe e Cabinda, somos uma empresa edicada à fornecer resultados profissional.
+              A <strong style={{ color: "#0B1F3B" }}>FC & Filhos Comércio e Prestação de Serviços</strong> é uma empresa angolana com mais de 8 anos de actividade,  especializada em comércio e prestação de serviços em diversas áreas. Com mais de 40 colaboradores e presença em Lubango, Luanda, Namibe e Cabinda, trabalhamos para fornecer soluções eficientes, inovadoras e de qualidade para empresas, instituições e particulares. A formação profissional constitui uma das nossas áreas de actuação, contribuindo para o desenvolvimento de competências e oportunidades para a juventude angolana.
             </p>
 
             {/* Mission / Vision / Values cards */}
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2rem" }}>
               {[
-                { icon: <Target size={20} />, title: "Missão", desc: "Formar profissionais competentes e prestar serviços de excelência que contribuam para o desenvolvimento sustentável de Angola." },
-                { icon: <Eye size={20} />, title: "Visão", desc: "Ser a empresa de referência nacional em Comércio e prestação de serviços multissetorial." },
-                { icon: <Heart size={20} />, title: "Valores", desc: "Excelência, Integridade, Inovação, Comprometimento e Responsabilidade Social." },
+                { icon: <Target size={20} />, title: "Missão", desc: "Fornecer soluções de comércio e prestação de serviços com qualidade, eficiência e profissionalismo, contribuindo para o crescimento económico e social de Angola." },
+                { icon: <Eye size={20} />, title: "Visão", desc: "Ser uma referência nacional no comércio e na prestação de serviços, reconhecida pela excelência, inovação e confiança dos seus clientes." },
+                { icon: <Heart size={20} />, title: "Valores", desc: "Excelência, Integridade, Inovação, Responsabilidade, Compromisso e Satisfação do Cliente." },
               ].map((item) => (
                 <div key={item.title} style={{
                   display: "flex", gap: "1rem", alignItems: "flex-start",

@@ -1,54 +1,72 @@
 import { motion } from "motion/react";
 import { GraduationCap, Zap, Hammer, Scissors, Wine } from "lucide-react";
+import formacaoImg from "../assets/fc/cer1.jpg";
+import cocktailsImg from "../assets/fc/kok44.jpg";
+import belezaImg from "../assets/fc/kok1.jpg";
+import construcaoImg from "../assets/fc/kok7.jpeg";
+import electricidadeImg from "../assets/fc/kok12.jpeg";
 
 const areas = [
   {
-    icon: <GraduationCap size={32} />,
-    title: "Formação Profissional",
-    desc: "Cursos certificados em diversas áreas: Informática, Electricidade, Construção Civil, Pastelaria, Culinária, Manicure e mais.",
-    color: "#4DA6FF",
-    bg: "rgba(77,166,255,0.08)",
-    border: "rgba(77,166,255,0.2)",
-    img: "https://images.unsplash.com/photo-1638957835514-224c57ffe617?w=400&h=280&fit=crop&auto=format",
-  },
-  {
-    icon: <Wine size={32} />,
-    title: "Mixologia e Coquetelaria",
-    desc: "Formação especializada em técnicas de bartending, criação de cocktails e gestão de bar profissional.",
-    color: "#9c27b0",
-    bg: "rgba(156,39,176,0.08)",
-    border: "rgba(156,39,176,0.2)",
-    img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=280&fit=crop&auto=format",
-  },
-  {
-    icon: <Scissors size={32} />,
-    title: "Salão de Beleza",
-    desc: "Serviços completos de beleza e estética, incluindo cabeleireiro, manicure, pedicure e tratamentos especializados.",
-    color: "#e91e8c",
-    bg: "rgba(233,30,140,0.08)",
-    border: "rgba(233,30,140,0.2)",
-    img: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=400&h=280&fit=crop&auto=format",
-  },
-  {
     icon: <Hammer size={32} />,
     title: "Construção Civil",
-    desc: "Execução de obras, reformas e projetos de construção civil com materiais de qualidade e mão de obra especializada.",
+    desc: "Execução de obras, remodelações, acabamentos, manutenção e diversos serviços ligados à construção civil.",
     color: "#ff6f00",
     bg: "rgba(255,111,0,0.08)",
     border: "rgba(255,111,0,0.2)",
-    img: "https://images.unsplash.com/photo-1694521787673-28cbd8830ea5?w=400&h=280&fit=crop&auto=format",
+    img: construcaoImg,
   },
+
   {
     icon: <Zap size={32} />,
     title: "Instalações Eléctricas",
-    desc: "Instalação, manutenção e reparação de sistemas eléctricos residenciais e industriais com total segurança.",
+    desc: "Montagem, manutenção e reparação de sistemas eléctricos residenciais, comerciais e industriais.",
     color: "#4CAF50",
     bg: "rgba(76,175,80,0.08)",
     border: "rgba(76,175,80,0.2)",
-    img: "https://images.unsplash.com/photo-1655337690778-694dda7f4454?w=400&h=280&fit=crop&auto=format",
+    img: electricidadeImg,
+  },
+
+  {
+    icon: <Scissors size={32} />,
+    title: "Salão de Beleza",
+    desc: "Serviços de cabeleireiro, manicure, pedicure, estética e cuidados de beleza para homens e mulheres.",
+    color: "#e91e8c",
+    bg: "rgba(233,30,140,0.08)",
+    border: "rgba(233,30,140,0.2)",
+    img: belezaImg,
+  },
+
+  {
+    icon: <Wine size={32} />,
+    title: "Eventos e Mixologia",
+    desc: "Serviços de bartending, cocktails, apoio a eventos e formação especializada em mixologia.",
+    color: "#9c27b0",
+    bg: "rgba(156,39,176,0.08)",
+    border: "rgba(156,39,176,0.2)",
+    img: cocktailsImg,
+  },
+
+  {
+    icon: <Hammer size={32} />,
+    title: "Comércio Geral",
+    desc: "Comercialização de diversos produtos e fornecimento de materiais para empresas, instituições e particulares.",
+    color: "#4DA6FF",
+    bg: "rgba(77,166,255,0.08)",
+    border: "rgba(77,166,255,0.2)",
+    img: formacaoImg,
+  },
+
+  {
+    icon: <GraduationCap size={32} />,
+    title: "Formação Profissional",
+    desc: "Capacitação profissional em diversas áreas técnicas e práticas, contribuindo para o desenvolvimento de competências.",
+    color: "#00BCD4",
+    bg: "rgba(0,188,212,0.08)",
+    border: "rgba(0,188,212,0.2)",
+    img: formacaoImg,
   },
 ];
-
 export function Areas() {
   return (
     <section id="areas" style={{ padding: "6rem 1.5rem", background: "#f8fafc" }}>
@@ -82,7 +100,7 @@ export function Areas() {
             letterSpacing: "-0.02em",
             lineHeight: 1.2,
           }}>
-            Áreas de Actuação
+            Áreas de Negócio e Serviços
           </h2>
 
           <p style={{
@@ -93,7 +111,7 @@ export function Areas() {
             margin: "1rem auto 0",
             lineHeight: 1.7,
           }}>
-            Actuamos em múltiplas áreas para oferecer soluções completas de formação e serviços.
+            Actuamos nas áreas de comércio, prestação de serviços e capacitação profissional, oferecendo soluções completas para empresas e particulares.
           </p>
         </motion.div>
 

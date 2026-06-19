@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import logo from "../assets/fc/logo-fc-filhos.png";
 
 export function Footer() {
@@ -32,14 +32,16 @@ export function Footer() {
               </div>
             </div>
             <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: 280, marginBottom: "1.5rem" }}>
-              Comércio e Prestação de Serviços com Excelência. Mais de 8 anos formando profissionais e prestando serviços de excelência em Angola.
+                A FC & Filhos Comércio e Prestação de Serviços é uma empresa angolana
+  dedicada a fornecer soluções profissionais nas áreas de comércio,
+  formação, gráfica, construção civil, salão de beleza e mixologia,
+  contribuindo para o desenvolvimento de pessoas e organizações.
             </p>
             {/* Social */}
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {[
                 { icon: <Facebook size={17} />, href: "https://www.facebook.com/share/18dCYdriXN/", label: "Facebook" },
                 { icon: <Instagram size={17} />, href: "https://www.instagram.com/felizardo_casimiro?igsh=MWdkN3QxOXAxcnFxcQ==", label: "Instagram" },
-                { icon: <Youtube size={17} />, href: "#", label: "YouTube" },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -66,35 +68,53 @@ export function Footer() {
           <div>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15, color: "#fff", marginBottom: "1.25rem" }}>Links Rápidos</h4>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-              {[
-                { label: "Início", href: "#inicio" },
-                { label: "Sobre Nós", href: "#sobre" },
-                { label: "Áreas de Actuação", href: "#areas" },
-                { label: "Cursos", href: "#cursos" },
-                { label: "Galeria", href: "#galeria" },
-                { label: "Contactos", href: "#contactos" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14,
-                    color: "rgba(255,255,255,0.55)", textDecoration: "none",
-                    transition: "color 0.2s",
-                  }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#4DA6FF")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.55)")}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+         {[
+  { label: "Início", href: "#inicio" },
+  { label: "Sobre a Empresa", href: "#sobre" },
+  { label: "Áreas de Actuação", href: "#areas" },
+  { label: "Serviços", href: "#areas" },
+  { label: "Galeria", href: "#galeria" },
+  { label: "Testemunhos", href: "#testemunhos" },
+  { label: "Contactos", href: "#contactos" },
+].map((link) => (
+  <li key={link.label}>
+    <a
+      href={link.href}
+      style={{
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontSize: 14,
+        color: "rgba(255,255,255,0.55)",
+        textDecoration: "none",
+        transition: "color 0.2s",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.color = "#4DA6FF")
+      }
+      onMouseLeave={(e) =>
+        (e.currentTarget.style.color =
+          "rgba(255,255,255,0.55)")
+      }
+    >
+      {link.label}
+    </a>
+  </li>
+))}
             </ul>
           </div>
 
           {/* Cursos */}
           <div>
-            <h4 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15, color: "#fff", marginBottom: "1.25rem" }}>Nossos Cursos</h4>
+            <h4 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15, color: "#fff", marginBottom: "1.25rem" }}>Áreas de Actuação</h4>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-              {["Informática", "Electricidade", "Construção Civil", "Pastelaria", "Culinária", "Manicure e Pedicure", "Cocktails"].map((course) => (
+              {[
+ "Formação Profissional",
+ "Gráfica e Impressão",
+ "Construção Civil",
+ "Salão de Beleza",
+ "Mixologia & Cocktails",
+ "Consultoria",
+ "Prestação de Serviços"
+].map((course) => (
                 <li key={course}>
                   <a href="#cursos" style={{
                     fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14,
@@ -141,7 +161,7 @@ export function Footer() {
             © {year} FC & Filhos Comércio e Prestação de Serviços. Todos os direitos reservados.
           </p>
           <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.35)", margin: 0 }}>
-            Angola 🇦🇴
+            Presença Nacional • Angola 🇦🇴
           </p>
         </div>
       </div>

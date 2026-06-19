@@ -13,7 +13,6 @@ import { WhatsAppButton } from "./components/WhatsAppButton";
 
 export default function App() {
   return (
-    /* MARKER-MAKE-KIT-INVOKED */
     <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }

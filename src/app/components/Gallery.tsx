@@ -1,273 +1,142 @@
 import { useState } from "react";
-import { motion } from "motion/react";
-import { ImageIcon, PlayCircle } from "lucide-react";
-
-// IMAGENS
-import alunosCertificados from "../assets/fc/cer1.jpg";
-import cursoCocktails from "../assets/fc/kok44.jpg";
-
-// VÍDEOS
-import workshopVideo from "../assets/fc/work1.mp4";
-import formacaoVideo from "../assets/fc/vid1.mp4";
-
-const galleryItems = [
-  {
-    type: "image",
-    src: alunosCertificados,
-    label: "Entrega de Certificados",
-    category: "Certificados",
-    fit: "contain",
-  },
-  {
-    type: "image",
-    src: cursoCocktails,
-    label: "Curso de Cocktails",
-    category: "Mixologia",
-    fit: "cover",
-  },
-  {
-    type: "video",
-    src: workshopVideo,
-    label: "Workshop de Mixologia",
-    category: "Mixologia",
-  },
-  {
-    type: "video",
-    src: formacaoVideo,
-    label: "Formação Profissional",
-    category: "Formações",
-  },
-];
+import { motion, AnimatePresence } from "motion/react";
+import { ImageIcon, PlayCircle, X } from "lucide-react";
 
 export function Gallery() {
   const [activeFilter, setActiveFilter] = useState("Todos");
+  const [selected, setSelected] = useState<any>(null);
 
-  const filters = [
-    "Todos",
-    "Formações",
-    "Mixologia",
-    "Certificados",
-    "Vídeos",
+  // 🔥 AQUI ESTÃO AS TUAS FOTOS E VÍDEOS
+  const galleryItems = [
+    { id: 1, type: "image", src: "src/app/gallery/img1.jpg",  category: "Formações" },
+    { id: 2, type: "image", src: "src/app/gallery/img2.jpg",  category: "Certificados" },
+    { id: 3, type: "image", src: "src/app/gallery/img3.jpg",  category: "Mixologia" },
+    { id: 4, type: "image", src: "src/app/gallery/img4.jpg",  category: "Formações" },
+    { id: 5, type: "image", src: "src/app/gallery/img5.jpg",  category: "Formações" },
+    { id: 6, type: "image", src: "src/app/gallery/img6.jpg",  category: "Certificados" },
+    { id: 7, type: "image", src: "src/app/gallery/img7.jpg",  category: "Mixologia" },
+    { id: 8, type: "image", src: "src/app/gallery/img8.jpg",  category: "Formações" },
+    
+
+    { id: 5, type: "video", src: "src/app/gallery/video1.mp4", category: "Mixologia" },
+    { id: 6, type: "video", src: "src/app/gallery/video2.mp4",  category: "Formações" },
+    { id: 7, type: "video", src: "src/app/gallery/video3.mp4",  category: "Mixologia" },
+    { id: 8, type: "video", src: "src/app/gallery/video4.mp4",  category: "Formações" },
+    { id: 9, type: "video", src: "src/app/gallery/video5.mp4", category: "Mixologia" },
+    { id: 10, type: "video", src: "src/app/gallery/video6.mp4", category: "Formações" },
+    { id: 11, type: "video", src: "src/app/gallery/video7.mp4", category: "Mixologia" },
+    { id: 12, type: "video", src: "src/app/gallery/video8.mp4", category: "Formações" },
   ];
+
+  const filters = ["Todos", "Formações", "Mixologia", "Certificados", "Vídeos"];
 
   const filteredItems = galleryItems.filter((item) => {
     if (activeFilter === "Todos") return true;
-
-    if (activeFilter === "Vídeos") {
-      return item.type === "video";
-    }
-
+    if (activeFilter === "Vídeos") return item.type === "video";
     return item.category === activeFilter;
   });
 
   return (
-    <section
-      id="galeria"
-      style={{
-        padding: "6rem 1.5rem",
-        background: "#f8fafc",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
-        {/* Cabeçalho */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{
-            textAlign: "center",
-            marginBottom: "3rem",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: "13px",
-              fontWeight: 700,
-              color: "#4DA6FF",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              display: "block",
-              marginBottom: "0.75rem",
-            }}
-          >
-            O Nosso Trabalho
-          </span>
+    <section style={{ padding: "5rem 1.5rem", background: "#f8fafc" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
-          <h2
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              color: "#0B1F3B",
-              marginBottom: "1rem",
-            }}
-          >
-            Galeria FC & Filhos
-          </h2>
-
-          <p
-            style={{
-              maxWidth: "700px",
-              margin: "0 auto",
-              fontSize: "17px",
-              lineHeight: 1.8,
-              color: "#4a6080",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-            }}
-          >
-            Conheça alguns momentos das nossas formações,
-            workshops, actividades práticas e serviços realizados
-            em várias províncias de Angola.
-          </p>
-        </motion.div>
+        {/* TITULO */}
+        <h2 style={{ textAlign: "center", fontSize: "2.5rem", fontWeight: 800 }}>
+          Galeria
+        </h2>
 
         {/* FILTROS */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: "0.75rem",
-            marginBottom: "3rem",
-          }}
-        >
-          {filters.map((filter) => (
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 20 }}>
+          {filters.map((f) => (
             <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
+              key={f}
+              onClick={() => setActiveFilter(f)}
               style={{
-                padding: "0.8rem 1.5rem",
-                borderRadius: "999px",
+                padding: "10px 16px",
+                borderRadius: 999,
                 border: "none",
                 cursor: "pointer",
-                fontSize: "14px",
+                background: activeFilter === f ? "#4DA6FF" : "#fff",
+                color: activeFilter === f ? "#fff" : "#000",
                 fontWeight: 600,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                transition: "all .3s ease",
-
-                background:
-                  activeFilter === filter
-                    ? "#4DA6FF"
-                    : "#ffffff",
-
-                color:
-                  activeFilter === filter
-                    ? "#ffffff"
-                    : "#0B1F3B",
-
-                boxShadow:
-                  activeFilter === filter
-                    ? "0 8px 20px rgba(77,166,255,.35)"
-                    : "0 2px 10px rgba(0,0,0,.08)",
               }}
             >
-              {filter}
+              {f}
             </button>
           ))}
         </div>
 
         {/* GRID */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
-          {filteredItems.map((item, index) => (
-            <motion.div
-              key={`${item.label}-${index}`}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              whileHover={{
-                y: -6,
-              }}
+        <div style={{ columnCount: 3, columnGap: "16px", marginTop: 30 }}>
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelected(item)}
               style={{
-                background: "#fff",
-                borderRadius: "20px",
+                breakInside: "avoid",
+                marginBottom: "16px",
+                cursor: "pointer",
+                borderRadius: "12px",
                 overflow: "hidden",
-                boxShadow: "0 12px 30px rgba(11,31,59,0.08)",
-                border: "1px solid rgba(11,31,59,0.05)",
+                background: "#fff",
               }}
             >
-              {/* MEDIA */}
-              <div
-                style={{
-                  height: "280px",
-                  background: "#eef3fa",
-                  overflow: "hidden",
-                }}
-              >
-                {item.type === "image" ? (
-                  <img
-                    src={item.src}
-                    alt={item.label}
+              {item.type === "image" ? (
+                <img src={item.src} style={{ width: "100%" }} />
+              ) : (
+                <div style={{ position: "relative" }}>
+                  <video src={item.src} style={{ width: "100%" }} />
+                  <PlayCircle
+                    size={40}
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: item.fit || "cover",
-                      objectPosition: "center",
-                      display: "block",
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      color: "#fff",
                     }}
                   />
+                </div>
+              )}
+
+              <div style={{ padding: 10, fontWeight: 600 }}>
+                {item.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* MODAL */}
+        <AnimatePresence>
+          {selected && (
+            <div
+              onClick={() => setSelected(null)}
+              style={{
+                position: "fixed",
+                inset: 0,
+                background: "rgba(0,0,0,0.8)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div onClick={(e) => e.stopPropagation()}>
+                <X
+                  onClick={() => setSelected(null)}
+                  style={{ position: "absolute", top: 20, right: 20, color: "#fff" }}
+                />
+
+                {selected.type === "image" ? (
+                  <img src={selected.src} style={{ maxHeight: "80vh" }} />
                 ) : (
-                  <video
-                    controls
-                    preload="metadata"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                      background: "#000",
-                    }}
-                  >
-                    <source src={item.src} type="video/mp4" />
+                  <video controls autoPlay style={{ maxHeight: "80vh" }}>
+                    <source src={selected.src} />
                   </video>
                 )}
               </div>
-
-              {/* LEGENDA */}
-              <div
-                style={{
-                  padding: "1rem 1.25rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.65rem",
-                }}
-              >
-                {item.type === "image" ? (
-                  <ImageIcon size={18} color="#4DA6FF" />
-                ) : (
-                  <PlayCircle size={18} color="#4CAF50" />
-                )}
-
-                <span
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                    color: "#0B1F3B",
-                  }}
-                >
-                  {item.label}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

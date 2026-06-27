@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import { GraduationCap, Zap, Hammer, Scissors, Wine } from "lucide-react";
 import formacaoImg from "../assets/fc/cer1.jpg";
+import comercioImg from "../assets/fc/Comercio.jpg";
 import cocktailsImg from "../assets/fc/kok44.jpg";
-import belezaImg from "../assets/fc/kok1.jpg";
-import construcaoImg from "../assets/fc/kok7.jpeg";
-import electricidadeImg from "../assets/fc/kok12.jpeg";
+import belezaImg from "../assets/fc/salao.jpeg";
+import construcaoImg from "../assets/fc/construcao.jpeg";
+import electricidadeImg from "../assets/fc/instalacao.jpg";
 
 const areas = [
   {
@@ -54,7 +55,7 @@ const areas = [
     color: "#4DA6FF",
     bg: "rgba(77,166,255,0.08)",
     border: "rgba(77,166,255,0.2)",
-    img: formacaoImg,
+    img: comercioImg,
   },
 
   {

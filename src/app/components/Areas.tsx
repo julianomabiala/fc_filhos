@@ -1,74 +1,39 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { GraduationCap, Zap, Hammer, Scissors, Wine } from "lucide-react";
+import { serviceCatalog } from "../../data/siteContent";
+import { Hammer, Zap, Scissors, Wine, Box } from "lucide-react";
 import formacaoImg from "../assets/fc/cer1.jpg";
-import comercioImg from "../assets/fc/Comercio.jpg";
+import comercioImg from "../assets/fc/canalisacao.jpg";
 import cocktailsImg from "../assets/fc/kok44.jpg";
 import belezaImg from "../assets/fc/salao.jpeg";
 import construcaoImg from "../assets/fc/construcao.jpeg";
 import electricidadeImg from "../assets/fc/instalacao.jpg";
+import pinturaImg from "../assets/fc/pintura.jpg";
 
-const areas = [
-  {
-    icon: <Hammer size={32} />,
-    title: "Construção Civil",
-    desc: "Execução de obras, remodelações, acabamentos, manutenção e diversos serviços ligados à construção civil.",
-    color: "#ff6f00",
-    bg: "rgba(255,111,0,0.08)",
-    border: "rgba(255,111,0,0.2)",
-    img: construcaoImg,
-  },
-
-  {
-    icon: <Zap size={32} />,
-    title: "Instalações Eléctricas",
-    desc: "Montagem, manutenção e reparação de sistemas eléctricos residenciais, comerciais e industriais.",
-    color: "#4CAF50",
-    bg: "rgba(76,175,80,0.08)",
-    border: "rgba(76,175,80,0.2)",
-    img: electricidadeImg,
-  },
-
-  {
-    icon: <Scissors size={32} />,
-    title: "Salão de Beleza",
-    desc: "Serviços de cabeleireiro, manicure, pedicure, estética e cuidados de beleza para homens e mulheres.",
-    color: "#e91e8c",
-    bg: "rgba(233,30,140,0.08)",
-    border: "rgba(233,30,140,0.2)",
-    img: belezaImg,
-  },
-
-  {
-    icon: <Wine size={32} />,
-    title: "Eventos e Mixologia",
-    desc: "Serviços de bartending, cocktails, apoio a eventos e formação especializada em mixologia.",
-    color: "#9c27b0",
-    bg: "rgba(156,39,176,0.08)",
-    border: "rgba(156,39,176,0.2)",
-    img: cocktailsImg,
-  },
-
-  {
-    icon: <Hammer size={32} />,
-    title: "Comércio Geral",
-    desc: "Comercialização de diversos produtos e fornecimento de materiais para empresas, instituições e particulares.",
-    color: "#4DA6FF",
-    bg: "rgba(77,166,255,0.08)",
-    border: "rgba(77,166,255,0.2)",
-    img: comercioImg,
-  },
-
-  {
-    icon: <GraduationCap size={32} />,
-    title: "Formação Profissional",
-    desc: "Capacitação profissional em diversas áreas técnicas e práticas, contribuindo para o desenvolvimento de competências.",
-    color: "#00BCD4",
-    bg: "rgba(0,188,212,0.08)",
-    border: "rgba(0,188,212,0.2)",
-    img: formacaoImg,
-  },
-];
+// Build a simplified areas list from serviceCatalog for display
+const areas = serviceCatalog.map((s) => ({
+  slug: s.slug,
+  title: s.title,
+  desc: s.summary,
+  category: s.category,
+  icon: (
+    s.slug.includes("construcao") ? <Hammer size={32} /> :
+    s.slug.includes("electricidade") ? <Zap size={32} /> :
+    s.slug.includes("manicure") || s.slug.includes("sumo") ? <Scissors size={32} /> :
+    s.slug.includes("cocktail") ? <Wine size={32} /> : <Box size={32} />
+  ),
+  img: (
+    s.slug.includes("construcao") ? construcaoImg :
+    s.slug.includes("electricidade") ? electricidadeImg :
+    s.slug.includes("pintura") ? pinturaImg :
+    s.slug.includes("eventos") || s.slug.includes("cocktail") ? cocktailsImg :
+    s.slug.includes("formacao") ? formacaoImg :
+    s.slug.includes("sumo") || s.slug.includes("pastelaria") || s.slug.includes("culinaria") ? belezaImg : comercioImg
+  ),
+  color: "#4DA6FF",
+  bg: "rgba(77,166,255,0.08)",
+  border: "rgba(77,166,255,0.2)",
+}));
 export function Areas() {
   return (
     <section id="areas" style={{ padding: "6rem 1.5rem", background: "#f8fafc" }}>
@@ -116,26 +81,28 @@ export function Areas() {
             Actuamos nas áreas de comércio, prestação de serviços e capacitação profissional, oferecendo soluções completas para empresas e particulares.
           </p>
 
-          <Link
-            to="/formacao"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "2rem auto 0",
-              padding: "0.95rem 1.7rem",
-              borderRadius: 999,
-              background: "#4DA6FF",
-              color: "#fff",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              textDecoration: "none",
-              boxShadow: "0 18px 40px rgba(77,166,255,0.18)",
-              width: "fit-content",
-            }}
-          >
-            Ver outros cursos
-          </Link>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: '1.5rem' }}>
+            <Link
+              to="/servicos"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "0.95rem 1.7rem",
+                borderRadius: 999,
+                background: "#4DA6FF",
+                color: "#fff",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: 700,
+                textDecoration: "none",
+                boxShadow: "0 18px 40px rgba(77,166,255,0.18)",
+              }}
+            >
+              Ver mais serviços
+            </Link>
+
+            
+          </div>
         </motion.div>
 
         <div style={{
@@ -223,7 +190,7 @@ export function Areas() {
                   fontSize: 13,
                   fontWeight: 700,
                 }}>
-                  <Link to="/formacao" style={{ color: "inherit", textDecoration: "none" }}>
+                  <Link to={`/servicos/${area.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
                     Saber mais →
                   </Link>
                 </div>

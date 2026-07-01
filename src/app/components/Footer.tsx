@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "../assets/fc/logo-fc-filhos.png";
 
 export function Footer() {
@@ -69,17 +70,17 @@ export function Footer() {
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15, color: "#fff", marginBottom: "1.25rem" }}>Links Rápidos</h4>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
          {[
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre a Empresa", href: "#sobre" },
-  { label: "Áreas de Actuação", href: "#areas" },
-  { label: "Serviços", href: "#areas" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Testemunhos", href: "#testemunhos" },
-  { label: "Contactos", href: "#contactos" },
+  { label: "Início", to: "/" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Serviços", to: "/servicos" },
+  { label: "Portfólio", to: "/portfolio" },
+  { label: "Formação", to: "/formacao" },
+  { label: "Contactos", to: "/contactos" },
+  { label: "Orçamento", to: "/orcamento" },
 ].map((link) => (
   <li key={link.label}>
-    <a
-      href={link.href}
+    <Link
+      to={link.to}
       style={{
         fontFamily: "'Plus Jakarta Sans', sans-serif",
         fontSize: 14,
@@ -96,7 +97,7 @@ export function Footer() {
       }
     >
       {link.label}
-    </a>
+    </Link>
   </li>
 ))}
             </ul>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { GraduationCap, Zap, Hammer, Scissors, Wine } from "lucide-react";
 import formacaoImg from "../assets/fc/cer1.jpg";
@@ -114,6 +115,27 @@ export function Areas() {
           }}>
             Actuamos nas áreas de comércio, prestação de serviços e capacitação profissional, oferecendo soluções completas para empresas e particulares.
           </p>
+
+          <Link
+            to="/formacao"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "2rem auto 0",
+              padding: "0.95rem 1.7rem",
+              borderRadius: 999,
+              background: "#4DA6FF",
+              color: "#fff",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 700,
+              textDecoration: "none",
+              boxShadow: "0 18px 40px rgba(77,166,255,0.18)",
+              width: "fit-content",
+            }}
+          >
+            Ver outros cursos
+          </Link>
         </motion.div>
 
         <div style={{
@@ -201,9 +223,9 @@ export function Areas() {
                   fontSize: 13,
                   fontWeight: 700,
                 }}>
-                  <a href="#contactos" style={{ color: "inherit", textDecoration: "none" }}>
+                  <Link to="/formacao" style={{ color: "inherit", textDecoration: "none" }}>
                     Saber mais →
-                  </a>
+                  </Link>
                 </div>
 
               </div>

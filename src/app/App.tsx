@@ -1,15 +1,18 @@
 import "../styles/fonts.css";
+import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Areas } from "./components/Areas";
-import { Courses } from "./components/Courses";
-import { WhyUs } from "./components/WhyUs";
-import { Gallery } from "./components/Gallery";
-import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { Home } from "../pages/Home";
+import { Sobre } from "../pages/Sobre";
+import { Servicos } from "../pages/Servicos";
+import { Portfolio } from "../pages/Portfolio";
+import { Formacao } from "../pages/Formacao";
+import { Contactos } from "../pages/Contactos";
+import { Orcamento } from "../pages/Orcamento";
+import { Admin } from "../pages/Admin";
+import { ServicoDetalhe } from "../pages/ServicoDetalhe";
+import { CursoDetalhe } from "../pages/CursoDetalhe";
 
 export default function App() {
   return (
@@ -65,16 +68,19 @@ export default function App() {
       `}</style>
 
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Areas />
-        <Courses />
-        <WhyUs />
-        <Gallery />
-        <Testimonials />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/servicos/:slug" element={<ServicoDetalhe />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/formacao" element={<Formacao />} />
+        <Route path="/formacao/:slug" element={<CursoDetalhe />} />
+        <Route path="/contactos" element={<Contactos />} />
+        <Route path="/orcamento" element={<Orcamento />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <Footer />
       <WhatsAppButton />
     </div>

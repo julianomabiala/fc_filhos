@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "../assets/fc/logo-fc-filhos.png";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre Nós", href: "#sobre" },
-  { label: "Serviços", href: "#areas" },
-  { label: "Formação", href: "#cursos" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Clientes", href: "#testemunhos" },
-  { label: "Contactos", href: "#contactos" },
+  { label: "Início", to: "/" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Serviços", to: "/servicos" },
+  { label: "Portfólio", to: "/portfolio" },
+  { label: "Formação", to: "/formacao" },
+  { label: "Contactos", to: "/contactos" },
+  { label: "Orçamento", to: "/orcamento" },
 ];
 
 export function Navbar() {
@@ -37,7 +38,7 @@ export function Navbar() {
     >
       <nav style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
         {/* Logo */}
-        <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
+        <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
           <img
               src={logo}
               alt="FC & Filhos"
@@ -51,14 +52,14 @@ export function Navbar() {
             <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: "#fff", lineHeight: 1.1 }}>FC & Filhos</div>
             <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 10, color: "#4DA6FF", letterSpacing: "0.08em", lineHeight: 1 }}>COMÉRCIO & PRESTAÇÃO <br/> DE SERVIÇOS</div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul style={{ display: "flex", gap: "2rem", listStyle: "none", margin: 0, padding: 0 }} className="hidden-mobile">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
+            <li key={link.to}>
+              <Link
+                to={link.to}
                 style={{
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: 14, fontWeight: 500,
@@ -70,7 +71,7 @@ export function Navbar() {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -115,9 +116,9 @@ export function Navbar() {
         }}>
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
+              <li key={link.to}>
+                <Link
+                  to={link.to}
                   onClick={() => setMenuOpen(false)}
                   style={{
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -128,7 +129,7 @@ export function Navbar() {
                   }}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
